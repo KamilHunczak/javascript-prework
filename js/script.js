@@ -1,44 +1,45 @@
 function getMoveName(MoveId){
   if(MoveId == 1){
-    return 'kamień';
+    return 'rock';
   }
   else if(MoveId == 2){
-    return 'papier';
+    return 'paper';
   }
   else if(MoveId == 3){
-    return 'nożyce';
+    return 'scisors';
   }
-  printMessage('Nie znam ruchu o id ' + MoveId + '.');
-  return 'nieznany ruch';
 }
 
 function displayResult(computerMove, playerMove){
-  if( computerMove == 'kamień' && playerMove == 'papier'||
-      computerMove == 'papier' && playerMove == 'nożyce'||
-      computerMove == 'nożyce' && playerMove == 'kamień'){
-    return 'Ty wygrywasz!';
+  if( computerMove == 'rock' && playerMove == 'paper'||
+      computerMove == 'paper' && playerMove == 'scisors'||
+      computerMove == 'scisors' && playerMove == 'rock'){
+    return 'You Win!';
   }
   else if(computerMove == playerMove) {
-    return 'Remis';
+    return 'Draw';
   }
   else{
-    return 'Niestety przegrywasz';
+    return 'You Lost';
   }
   }
 
 function playGame(playerInput){
   clearMessages();
-
+  
+  
   //computer move
   let randomNumber = Math.floor(Math.random() * 3 + 1);
   let computerMove = getMoveName(randomNumber);
-  printMessage('Mój ruch to: ' + computerMove);
+  document.getElementById('computer-choice-image').src='images/'+computerMove+'.png';
+
 
   //player move
   let playerMove = getMoveName(playerInput);
-  printMessage('Twój ruch to: ' + playerMove);
+  document.getElementById('player-choice-image').src='images/'+playerMove+'.png';
 
   printMessage(displayResult(computerMove, playerMove));
+  
 }
 
 
@@ -51,7 +52,5 @@ document.getElementById('play-paper').addEventListener('click', function(){
 document.getElementById('play-scissors').addEventListener('click', function(){
   playGame(3);
 });
-
-// document.getElementById('play-rock').addEventListener('click', playGame(1));
 
 

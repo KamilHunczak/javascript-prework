@@ -7,12 +7,26 @@
 </head>
 <body>
 	<div class="container">
-		<div id="buttons">
-			<button type="button" id="play-rock">Kamień</button>
-			<button type="button" id="play-paper">Papier</button>
-			<button type="button" id="play-scissors">Nożyce</button>
+		<div class="computer-moves-wrapper">
+			<div class="computer-move"><img src="images/scisors.png" alt=""></div>
+			<div class="computer-move"><img src="images/paper.png" alt=""></div>
+			<div class="computer-move"><img src="images/rock.png" alt=""></div>
 		</div>
 		<div id="messages"></div>
+	</div>
+	<div class="container">
+		<div class="choices-wrapper">
+			<div id="computer-choice" class="computer-choice"><img id="computer-choice-image" src="images/paper.png" alt=""></div>
+			<div id="player-choice" class="player-choice"><img id="player-choice-image" src="images/rock.png" alt=""></div>
+		</div>
+	</div>
+	<div class="container">
+		<div id="buttons" class="player-moves-wrapper">
+			<button type="button" id="play-rock"><img src="images/rock.png" alt="rock"></button>
+			<button type="button" id="play-paper"><img src="images/paper.png" alt=""></button>
+			<button type="button" id="play-scissors"><img src="images/scisors.png" alt=""></button>
+		</div>
+		
 	</div>
 	<script src="js/functions.js"></script>
 	<script src="js/script.js"></script>
